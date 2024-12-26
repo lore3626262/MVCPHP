@@ -1,23 +1,32 @@
 <?php
-class Conexion{
- 
+class Conexion
+{
+    // Constructor para inicializar las propiedades de la clase
     public function __construct(
-        String $driver = "mysql",
-        String $host = "localhost",
-        String $user = "root",
-        String $pass = "Lorena30.",
-        String $database = "sunny_side",
-        String $charset = "utf8",
+        public String $driver = "mysql",
+        public String $host = "localhost",
+        public String $user = "root",
+        public String $pass = "Lorena30.",
+        public String $database = "sunny_side",
+        public String $charset = "utf8"
+    ) {}
 
-    ){}
-        protected function connect() {
-                try{
+    // Método para establecer la conexión
+    public function connect()
+    {
+        try {
+          
+            $dsn = "$this->driver:host=$this->host;dbname=$this->database;charset=$this->charset";
+            $pdo = new PDO($dsn, $this->user, $this->pass);
+            
+            // Configurar el manejo de errores
+            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                }catch(PDOException $mensaje){
-                    echo $mensaje->getMessage();
+            return $pdo; 
+        } catch (PDOException $e) {
+            echo "Error de conexión: " . $e->getMessage();
+            return null;
         }
-     
-}
-
+    }
 }
 ?>

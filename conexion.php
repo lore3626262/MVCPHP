@@ -1,31 +1,22 @@
 <?php
-class Conexion
-{
-    // Constructor para inicializar las propiedades de la clase
-    public function __construct(
-        public String $driver = "mysql",
-        public String $host = "localhost",
-        public String $user = "root",
-        public String $pass = "Lorena30.",
-        public String $database = "sunny_side",
-        public String $charset = "utf8"
-    ) {}
+class Conexion {
+    public $driver = 'mysql';
+    public $host = 'localhost';
+    public $user = 'root';
+    public $pass = 'Lorena30.';
+    public $dbName = 'sunny_side';
+    public $charset = 'utf8';
+    public $port = 3307;  // Aquí está el puerto que deseas usar
 
-    // Método para establecer la conexión
-    public function connect()
+    protected function conexion()
     {
         try {
-          
-            $dsn = "$this->driver:host=$this->host;dbname=$this->database;charset=$this->charset";
-            $pdo = new PDO($dsn, $this->user, $this->pass);
-            
-            // Configurar el manejo de errores
+            // Agregamos el puerto 3307 a la cadena de conexión
+            $pdo = new PDO("{$this->driver}:host={$this->host};port={$this->port};dbname={$this->dbName};charset={$this->charset}", $this->user, $this->pass);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-            return $pdo; 
+            return $pdo;
         } catch (PDOException $e) {
-            echo "Error de conexión: " . $e->getMessage();
-            return null;
+            echo $e->getMessage();
         }
     }
 }

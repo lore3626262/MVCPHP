@@ -1,5 +1,6 @@
 <?php
 require_once("usuario.php");
+require_once("animal.php");
 $usuario=new usuario(
     2,
     "sara",
@@ -14,5 +15,20 @@ $usuario=new usuario(
 //$usuario->actualizar();
 //$usuario->eliminar() ;
 //var_dump($usuario->consultarTodo()) ;
-var_dump($usuario->consultarUno(1)) ;
+//var_dump($usuario->consultarUno(1)) ;
+$animal=new Animal(
+    2,
+    "Celeste",
+    "raddoll",
+    "f",
+    "being",
+    2
+
+);
+
+$animal->insertarAnimal() ;
+
+
+
+
 ?>

@@ -20,5 +20,14 @@ class Usuario extends crud {
             [$this->nombre, $this->apellido, $this->telefono, $this->edad]  // Datos a insertar
         );
     }
+    public function actualizar() {
+        // Asegúrate de que $this->id esté definido en el objeto
+        $this->modificacion(
+            "nombre=?, apellido=?, telefono=?, edad=?",
+            [$this->nombre, $this->apellido, $this->telefono, $this->edad],
+            $this->id  // Pasar el id del registro a actualizar
+        );
+    }
+    
 }
 ?>

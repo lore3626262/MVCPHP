@@ -1,15 +1,16 @@
 <?php
 require_once("usuario.php");
 $usuario=new usuario(
-    0,
-    "lorena",
+    2,
+    "sara",
     "Martinez",
     "3163386786",
-    18
+    30
 
 
 );
 
-$usuario->insertar();
+//$usuario->insertar();
+$usuario->actualizar();
 
 ?>

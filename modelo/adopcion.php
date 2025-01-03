@@ -1,5 +1,5 @@
 <?php
-require_once("crud.php");
+require_once("core/crud.php");
 class Adopcion extends Crud{
 
     public function __construct(

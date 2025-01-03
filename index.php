@@ -1,7 +1,7 @@
 <?php
-require_once("usuario.php");
-require_once("animal.php");
-require_once("adopcion.php");
+require_once("modelo/usuario.php");
+require_once("modelo/animal.php");
+require_once("modelo/adopcion.php");
 $usuario=new usuario(
     2,
     "sara",

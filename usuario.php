@@ -28,6 +28,12 @@ class Usuario extends crud {
             $this->id  // Pasar el id del registro a actualizar
         );
     }
+
+    public function eliminar() {
+        $this->deleted($this->id);
+
+    }
+
     
 }
 ?>

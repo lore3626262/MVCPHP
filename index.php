@@ -11,6 +11,8 @@ $usuario=new usuario(
 );
 
 //$usuario->insertar();
-$usuario->actualizar();
-
+//$usuario->actualizar();
+//$usuario->eliminar() ;
+//var_dump($usuario->consultarTodo()) ;
+var_dump($usuario->consultarUno(1)) ;
 ?>

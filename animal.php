@@ -20,9 +20,9 @@ require_once("crud.php");
     }
 
     public function updatearAnimal(){
-        $this->modificacion("nombre,raza,sexo,color,edad",
+        $this->modificacion("nombre=?,raza=?,sexo=?,color=?,edad=?",
         [$this->nombre,$this->raza,$this->sexo,$this->color,$this->edad],
-        $this->id,
+        $this->id
     );
     }
     public function deletearAnimal(){

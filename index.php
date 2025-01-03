@@ -26,8 +26,11 @@ $animal=new Animal(
 
 );
 
-$animal->insertarAnimal() ;
-
+//$animal->insertarAnimal() ;
+//$animal->updatearAnimal()
+//$animal->deletearAnimal();
+//var_dump($animal->consultarTodo());
+var_dump($animal->consultarUno(1));
 
 
 

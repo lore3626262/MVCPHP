@@ -1,6 +1,7 @@
 <?php
 require_once("usuario.php");
 require_once("animal.php");
+require_once("adopcion.php");
 $usuario=new usuario(
     2,
     "sara",
@@ -30,7 +31,21 @@ $animal=new Animal(
 //$animal->updatearAnimal()
 //$animal->deletearAnimal();
 //var_dump($animal->consultarTodo());
-var_dump($animal->consultarUno(1));
+//var_dump($animal->consultarUno(1));
+
+$adopcion=new Adopcion(
+    3,
+    1,
+    1,
+    10022021,
+    5,
+);
+//$adopcion->insertaradocion();
+//$adopcion->modificarAdopcion();
+//$adopcion->eliminarAdopciop();
+//var_dump($adopcion->consultarTodo());
+var_dump($adopcion->consultarUno(2));
+
 
 
 
